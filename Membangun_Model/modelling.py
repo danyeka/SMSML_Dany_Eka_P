@@ -8,15 +8,14 @@ from datetime import datetime
 from dagshub import dagshub_logger
 import dagshub
 
-# dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
+dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
 
-
-
-# mlflow.set_tracking_uri("http://127.0.0.1:5000/") # untuk di lokal
-# mlflow.set_tracking_uri("https://dagshub.com/danyeka/lung-cancer.mlflow")
+mlflow.set_tracking_uri("http://127.0.0.1:5000/") # untuk di lokal
+mlflow.set_tracking_uri("https://dagshub.com/danyeka/lung-cancer.mlflow")
+mlflow.set_tracking_uri("file:///" + "c:/Users/immab/Documents/SMSML/Membangun_Model/mlruns")
 
 # Create a new MLflow Experiment
-# mlflow.set_experiment("Lung Cancer Prediction")
+mlflow.set_experiment("Lung Cancer Prediction")
 
 data = pd.read_csv("lung_cancer_clean.csv")
 
@@ -38,7 +37,8 @@ with mlflow.start_run(run_name=run_name):
     mlflow.log_param("n_neighbors", n_neighbors)
     mlflow.log_param("algorithm", algorithm)
     
-    mlflow.autolog(disable=True)  # Nonaktifkan autolog agar tidak bentrok saat log manual
+    # mlflow.autolog(disable=True)  # Nonaktifkan autolog agar tidak bentrok saat log manual
+    mlflow.sklearn.autolog()  # Aktifkan autolog untuk logging otomatis
     
     # Train model
     model = KNeighborsClassifier(n_neighbors=n_neighbors, algorithm=algorithm)

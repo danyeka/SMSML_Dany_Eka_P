@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/immab/Documents/SMSML_Dany_Eka_P/Membangun_Model/mlruns/896126304495788152/c4783989ed3346268bb753dff18e037e/artifacts
+end_time: 1749542598880
+entry_point_name: ''
+experiment_id: '896126304495788152'
+lifecycle_stage: active
+run_id: c4783989ed3346268bb753dff18e037e
+run_name: KNN_Basic_AutoLog_2025-06-10_15-03-08
+run_uuid: c4783989ed3346268bb753dff18e037e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749542589288
+status: 3
+tags: []
+user_id: K E I

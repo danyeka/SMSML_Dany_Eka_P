@@ -1,0 +1,6 @@
+artifact_location: file:///c:/Users/immab/Documents/SMSML_Dany_Eka_P/Membangun_Model/mlruns/949248965808303634
+creation_time: 1749454783256
+experiment_id: '949248965808303634'
+last_update_time: 1749454783256
+lifecycle_stage: active
+name: KNN Hyperparameter Tuning

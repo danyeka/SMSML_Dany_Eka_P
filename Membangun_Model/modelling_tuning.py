@@ -13,11 +13,13 @@ from datetime import datetime
 from dagshub import dagshub_logger
 import dagshub
 
-# dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
+dagshub.init(repo_owner='danyeka', repo_name='lung-cancer', mlflow=True)
 
 # Load data dan split train-test
 data = pd.read_csv("lung_cancer_clean.csv")
 # mlflow.set_tracking_uri("https://dagshub.com/danyeka/lung-cancer.mlflow")
+mlflow.set_tracking_uri("file:///" + "c:/Users/immab/Documents/SMSML_Dany_Eka_P/Membangun_Model/mlruns")
+mlflow.set_experiment("KNN Hyperparameter Tuning")
 
 X_train, X_test, y_train, y_test = train_test_split(
     data.drop("lung_cancer", axis=1),
